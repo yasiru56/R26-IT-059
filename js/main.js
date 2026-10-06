@@ -141,6 +141,10 @@
       .filter(Boolean)
       .join(" · ");
     $("#footer-copy").textContent = `© ${new Date().getFullYear()} ${p.name || ""}. All rights reserved.`;
+    const credit = SITE.credit || {};
+    $("#footer-credit").innerHTML = credit.name
+      ? `Created by ${credit.url ? `<a href="${esc(credit.url)}" target="_blank" rel="noopener">${esc(credit.name)}</a>` : esc(credit.name)}`
+      : "";
   }
 
   function renderLiterature() {
@@ -351,6 +355,68 @@
         </li>`;
       })
       .join("");
+  }
+
+  function feedbackCard(item) {
+    return `
+      <article class="card fb-card">
+        <span class="chip">${esc(item.who)}</span>
+        <div class="fb-comment">
+          <p class="fb-label">${icon("users")}Panel</p>
+          <p>${esc(item.comment)}</p>
+        </div>
+        ${item.response
+          ? `<div class="fb-response">
+          <p class="fb-label">${icon("check")}Our response</p>
+          <p>${esc(item.response)}</p>
+        </div>`
+          : ""}
+      </article>`;
+  }
+
+  function renderFeedback() {
+    const feedback = SITE.feedback || {};
+    const stages = list(feedback.stages);
+    if (!stages.length) return hideSection("feedback");
+    $("#feedback-note").textContent = feedback.note || "";
+
+    $("#feedback-tabs").innerHTML = stages
+      .map(
+        (s, i) => `
+        <button class="fb-tab" type="button" role="tab" id="fb-tab-${i}" aria-controls="fb-panel-${i}"
+          aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">
+          <span>${esc(s.stage)}</span>${s.date ? `<small>${esc(s.date)}</small>` : ""}
+        </button>`
+      )
+      .join("");
+    $("#feedback-panels").innerHTML = stages
+      .map(
+        (s, i) => `
+        <div class="fb-panel" role="tabpanel" id="fb-panel-${i}" aria-labelledby="fb-tab-${i}" ${i === 0 ? "" : "hidden"}>
+          <div class="fb-grid">${list(s.items).map(feedbackCard).join("")}</div>
+        </div>`
+      )
+      .join("");
+
+    const tabs = $$(".fb-tab");
+    const select = (index) => {
+      tabs.forEach((tab, i) => {
+        const active = i === index;
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+        $(`#fb-panel-${i}`).hidden = !active;
+      });
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => select(i));
+      tab.addEventListener("keydown", (e) => {
+        const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+        if (!step) return;
+        const next = (i + step + tabs.length) % tabs.length;
+        select(next);
+        tabs[next].focus();
+      });
+    });
   }
 
   const PREVIEWABLE = ["pdf", "png", "jpg", "jpeg", "gif", "webp", "svg", "txt", "mp4"];
@@ -603,6 +669,7 @@
   renderTechnologies();
   renderScreenshots();
   renderMilestones();
+  renderFeedback();
   renderDownloads();
   renderTeam();
   renderContact();

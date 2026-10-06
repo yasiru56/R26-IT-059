@@ -37,6 +37,10 @@ save, and refresh the browser.
 - **Date ranges:** for a milestone that runs over several days, set `date` to the last day and add
   `dateText: "19 – 21 Oct 2026"`. The text is shown instead of the date.
 - **Social links:** leave `email`, `linkedin` or `github` as `""` to hide that icon.
+- **Panel feedback:** edit `feedback.stages` in `data.js`. Each stage becomes a tab under the timeline.
+- **Footer credit:** the small "Created by" line comes from `credit` in `data.js`.
+- **Theme:** the site always opens in light mode. Visitors can switch to dark mode with the
+  moon button, and their choice is remembered on their device.
 
 ## Adding documents and slides
 

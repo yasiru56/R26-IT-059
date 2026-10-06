@@ -182,11 +182,29 @@ window.SITE = {
     { name: "Git", icon: DEVICON + "git/git-original.svg" }
   ],
 
-  /* ---------- Screenshots (put images in assets/images/screenshots/) ---------- */
+  /* ---------- Screenshots (put images in assets/images/screenshots/) ----------
+     With an odd number of screenshots, the first one is shown full width. */
   screenshots: [
-    { src: "assets/images/placeholder-screenshot.svg", caption: "Screenshot 1: TBD" },
-    { src: "assets/images/placeholder-screenshot.svg", caption: "Screenshot 2: TBD" },
-    { src: "assets/images/placeholder-screenshot.svg", caption: "Screenshot 3: TBD" }
+    {
+      src: "assets/images/screenshots/meta-fnn-risk.webp",
+      caption: "Meta-Integration dashboard: academic, behavioural and emotional signals fused into one burnout risk and alert level"
+    },
+    {
+      src: "assets/images/screenshots/academic-concurrent-modules.webp",
+      caption: "Academic trend: concurrent-module validation against the actual outcome"
+    },
+    {
+      src: "assets/images/screenshots/emotional-analysis.webp",
+      caption: "Emotional signal analysis: risk level, summary and advisor recommendation (demo student)"
+    },
+    {
+      src: "assets/images/screenshots/emotional-progression.webp",
+      caption: "Emotional burnout risk progression across the semester"
+    },
+    {
+      src: "assets/images/screenshots/behavioural-anomaly.webp",
+      caption: "Behavioural anomaly and curriculum compliance detection from LMS activity"
+    }
   ],
 
   /* ---------- Milestones (2026 Regular Batch RP timeline) ----------
@@ -270,6 +288,78 @@ window.SITE = {
       text: "Evidence of research paper publication submitted."
     }
   ],
+
+  /* ---------- Panel feedback (shown under the timeline, one tab per assessment) ----------
+     who: component or group, comment: what the panel said, response: what we changed.
+     Set stages: [] to hide this part. */
+  feedback: {
+    note: "Summarised comments from assessment panel IT-P05 at each milestone, and what we changed in response.",
+    stages: [
+      {
+        stage: "Proposal Presentation",
+        date: "16 – 18 Mar 2026",
+        items: [
+          {
+            who: "Component 1 · Academic Trend",
+            comment: "How will academic performance be measured, and how will its trend be predicted?",
+            response: "We defined 13 weekly features (7 VLE engagement and 6 assessment features). A GRU reads all 17 weeks as one sequence and learns declining trajectories instead of single-point thresholds."
+          },
+          {
+            who: "Component 2 · Emotional Signal",
+            comment: "Detecting emotion in student forum text with BERT is fine, but past research has already done this, so the component needs to go further.",
+            response: "We ran a systematic comparison of ten models, built a BERT + RoBERTa ensemble (82.32% accuracy) with phrase-level explanations, and added a lead-time analysis of how early distress can be detected."
+          },
+          {
+            who: "Component 3 · Behavioural Pattern",
+            comment: "It is not clear how anomalies in sleeping patterns and phone-app usage link to student burnout and dropout.",
+            response: "We changed the data source to academic behaviour only: LMS interaction logs such as clicks, active days, resource views and quiz attempts."
+          },
+          {
+            who: "Component 4 · Meta-Integration",
+            comment: "The logic for capturing engagement levels was not convincing.",
+            response: "We refocused the component on the meta-integration layer, which fuses the other components' risk signals into one explained alert."
+          }
+        ]
+      },
+      {
+        stage: "Progress Presentation I",
+        date: "11 – 13 May 2026",
+        items: [
+          {
+            who: "Component 1 · Academic Trend",
+            comment: "Very good progress. In PP2, address the real-world case where one student takes many modules in a semester.",
+            response: "We found 1,071 students taking 2–3 modules at once, fixed a bug that blended assessment scores across modules, recalibrated the alert threshold and added per-student max-pooling (F1 0.7464). We also validated across academic years (Week 17 AUC 0.8286)."
+          },
+          {
+            who: "Component 2 · Emotional Signal",
+            comment: "Very good progress. In PP2, provide a simple UI to predict burnout from student feedback, with a white background, as dark backgrounds are hard to see in demos.",
+            response: "We redesigned the interface with a clean light theme, a hoverable attention heatmap, a weekly risk progression chart and an advisor recommendation box (React + FastAPI)."
+          },
+          {
+            who: "Component 3 · Behavioural Pattern",
+            comment: "In PP2, show how the burnout probability or score is derived from LMS activity data.",
+            response: "We built a student behavioural profile dashboard with a weekly risk-score timeline and LMS feature trends, and added a curriculum compliance score and academic-calendar awareness (OULAD AUC 0.6039, SLIIT synthetic AUC 0.7649)."
+          },
+          {
+            who: "Component 4 · Meta-Integration",
+            comment: "Explain more clearly how the meta-integration model and its explanations use the other components' risk and burnout scores.",
+            response: "We documented the Meta-Integration FNN (component risk scores in, one 0–1 burnout risk out, with HIGH / MEDIUM / LOW alerts), its explanations at model and system level, and a dashboard with student filtering and export."
+          }
+        ]
+      },
+      {
+        stage: "Progress Presentation II",
+        date: "31 Aug – 2 Sep 2026",
+        items: [
+          {
+            who: "Components 1–3",
+            comment: "Good to very good progress for the PP2 milestone. Work on the research paper.",
+            response: "We wrote the group research paper and submitted it to ICAC 2026."
+          }
+        ]
+      }
+    ]
+  },
 
   /* ---------- Downloads ----------
      file:     path to the file, e.g. "assets/docs/Research_Paper.pdf"
@@ -358,6 +448,12 @@ window.SITE = {
       linkedin: ""
     }
   ],
+
+  /* ---------- Website credit (small line at the bottom of the footer) ---------- */
+  credit: {
+    name: "Yasiru Induwara",
+    url: "https://github.com/yasiru56"
+  },
 
   /* ---------- Contact ---------- */
   contact: {

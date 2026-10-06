@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
   <meta name="description" content="BurnoutGuard (R26-IT-059): an explainable multi-modal AI system for early academic burnout and dropout prediction. SLIIT research project.">
   <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 
-  <!-- Apply saved theme before paint (avoids a light/dark flash) -->
+  <!-- Light theme by default; apply a visitor's saved choice before paint (avoids a light/dark flash) -->
   <script>
     (function () {
       document.documentElement.classList.add("js");
@@ -224,6 +224,16 @@
         </header>
         <div class="timeline-summary reveal" id="timeline-summary"></div>
         <ol class="timeline" id="timeline"></ol>
+
+        <div class="feedback" id="feedback">
+          <header class="section-head sub-head reveal">
+            <span class="section-tag">Panel Feedback</span>
+            <h2>Feedback &amp; Our Response</h2>
+            <p id="feedback-note"></p>
+          </header>
+          <div class="fb-tabs reveal" id="feedback-tabs" role="tablist" aria-label="Assessment"></div>
+          <div id="feedback-panels"></div>
+        </div>
       </div>
     </section>
 
@@ -328,7 +338,10 @@
         <a href="#team">About Us</a>
         <a href="#contact">Contact</a>
       </nav>
-      <p class="footer-copy" id="footer-copy"></p>
+      <div class="footer-bottom">
+        <p class="footer-copy" id="footer-copy"></p>
+        <p class="footer-credit" id="footer-credit"></p>
+      </div>
     </div>
   </footer>
 
