@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Project Website</title>
+  <meta name="description" content="BurnoutGuard (R26-IT-059): an explainable multi-modal AI system for early academic burnout and dropout prediction. SLIIT research project.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Apply saved theme before paint (avoids a light/dark flash) -->
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") document.documentElement.setAttribute("data-theme", saved);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Back to top">
+        <img src="assets/images/logo.svg" alt="" class="brand-logo" width="36" height="36">
+        <span class="brand-text">
+          <span class="brand-name" id="brand-name">Project Name</span>
+          <span class="brand-id" id="brand-id">Research Project</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav-menu" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li class="has-dropdown">
+            <a href="#scope" class="nav-link">Project Scope
+              <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="#literature">Literature Survey</a></li>
+              <li><a href="#research-gap">Research Gap</a></li>
+              <li><a href="#problem-solution">Problem &amp; Solution</a></li>
+              <li><a href="#objectives">Research Objectives</a></li>
+              <li><a href="#methodology">Methodology</a></li>
+              <li><a href="#technologies">Technologies</a></li>
+              <li><a href="#screenshots">Screenshots</a></li>
+            </ul>
+          </li>
+          <li><a href="#milestones" class="nav-link">Milestones</a></li>
+          <li class="has-dropdown">
+            <a href="#downloads" class="nav-link">Downloads
+              <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <ul class="dropdown">
+              <li><a href="#documents">Documents</a></li>
+              <li><a href="#presentations">Presentations</a></li>
+            </ul>
+          </li>
+          <li><a href="#team" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="i-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="i-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============================== HERO =============================== -->
+  <section class="hero" id="home" data-nav="home">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+      <span class="hero-grid"></span>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <span class="pill hero-badge" id="hero-badge"></span>
+        <h1 class="hero-title" id="hero-title"></h1>
+        <p class="hero-lead" id="hero-lead"></p>
+        <div class="hero-actions">
+          <a href="#scope" class="btn btn-primary">Explore the Research</a>
+          <a href="#downloads" class="btn btn-ghost">View Documents</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Project at a glance">
+        <div class="panel-head">
+          <img src="assets/images/logo.svg" alt="" width="52" height="52">
+          <div>
+            <p class="panel-label">Research Project</p>
+            <p class="panel-id" id="panel-id"></p>
+          </div>
+        </div>
+        <div class="stat-grid" id="hero-stats"></div>
+        <p class="panel-foot" id="panel-foot"></p>
+      </aside>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- ========================== PROJECT SCOPE ========================== -->
+    <div id="scope">
+      <section class="section" id="literature" data-nav="scope">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-tag">Project Scope · Literature Survey</span>
+            <h2>Background &amp; Literature Survey</h2>
+            <p>What existing research tells us about the problem domain.</p>
+          </header>
+          <div class="lit-grid">
+            <article class="card lit-text reveal" id="literature-text"></article>
+            <aside class="card lit-points reveal" aria-label="Key findings">
+              <h3>Key Findings</h3>
+              <ul class="check-list" id="literature-points"></ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="research-gap" data-nav="scope">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-tag">Project Scope · Research Gap</span>
+            <h2>Research Gap</h2>
+            <p>The limitations of existing solutions that this research addresses.</p>
+          </header>
+          <div class="card-grid" id="gap-list"></div>
+          <div class="table-card card reveal" id="gap-table-card">
+            <h3>Comparison with Existing Research</h3>
+            <div class="table-wrap">
+              <table class="compare-table" id="gap-table"></table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="problem-solution" data-nav="scope">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-tag">Project Scope · Problem &amp; Solution</span>
+            <h2>Research Problem &amp; Proposed Solution</h2>
+          </header>
+          <div class="ps-grid">
+            <article class="card ps-card ps-problem reveal" id="problem-card"></article>
+            <article class="card ps-card ps-solution reveal" id="solution-card"></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="objectives" data-nav="scope">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-tag">Project Scope · Objectives</span>
+            <h2>Research Objectives</h2>
+          </header>
+          <div class="main-objective reveal" id="main-objective"></div>
+          <div class="objective-grid" id="objective-list"></div>
+        </div>
+      </section>
+
+      <section class="section" id="methodology" data-nav="scope">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-tag">Project Scope · Methodology</span>
+            <h2>Methodology &amp; System Architecture</h2>
+          </header>
+          <div class="method-grid">
+            <article class="card method-text reveal" id="method-text"></article>
+            <ol class="step-list" id="method-steps"></ol>
+          </div>
+          <figure class="card diagram-card reveal" id="diagram-card"></figure>
+        </div>
+      </section>
+
+      <section class="section alt" id="technologies" data-nav="scope">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-tag">Project Scope · Technologies</span>
+            <h2>Technology Stack</h2>
+            <p>Tools, frameworks and platforms used to build the system.</p>
+          </header>
+          <div class="tech-grid" id="tech-list"></div>
+        </div>
+      </section>
+
+      <section class="section" id="screenshots" data-nav="scope">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-tag">System Preview</span>
+            <h2>Screenshots</h2>
+            <p>A look at the system in action. Click an image to enlarge it.</p>
+          </header>
+          <div class="gallery" id="gallery"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================ MILESTONES ============================ -->
+    <section class="section alt" id="milestones" data-nav="milestones">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Milestones</span>
+          <h2>Project Timeline</h2>
+          <p>Assessments and key deliverables across the research project.</p>
+        </header>
+        <div class="timeline-summary reveal" id="timeline-summary"></div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- ============================= DOWNLOADS ============================= -->
+    <section class="section" id="downloads" data-nav="downloads">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Downloads</span>
+          <h2>Documents &amp; Presentations</h2>
+          <p>View any file in your browser or download it to your device.</p>
+        </header>
+        <div class="dl-columns">
+          <div class="dl-column" id="documents">
+            <h3 class="dl-heading">Documents <span class="count" id="documents-count"></span></h3>
+            <div class="dl-list" id="documents-list"></div>
+          </div>
+          <div class="dl-column" id="presentations">
+            <h3 class="dl-heading">Presentations <span class="count" id="presentations-count"></span></h3>
+            <div class="dl-list" id="presentations-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT US ============================== -->
+    <section class="section alt" id="team" data-nav="team">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">About Us</span>
+          <h2>Meet the Team</h2>
+          <p>The researchers behind this project.</p>
+        </header>
+        <div class="team-grid" id="team-list"></div>
+
+        <header class="section-head sub-head reveal">
+          <span class="section-tag">Academic Guidance</span>
+          <h2>Supervisors</h2>
+        </header>
+        <div class="team-grid supervisors" id="supervisor-list"></div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section" id="contact" data-nav="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Contact Us</span>
+          <h2>Get in Touch</h2>
+        </header>
+        <div class="contact-grid">
+          <aside class="card contact-info reveal">
+            <h3>Contact Details</h3>
+            <p class="muted" id="contact-note"></p>
+            <ul class="contact-list" id="contact-list"></ul>
+          </aside>
+
+          <form class="card contact-form reveal" id="contact-form" novalidate>
+            <h3>Send a Message</h3>
+            <div class="form-row">
+              <label class="field">
+                <span>Full Name</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label class="field">
+                <span>Email Address</span>
+                <input type="email" name="email" autocomplete="email" required>
+              </label>
+            </div>
+            <label class="field">
+              <span>Subject</span>
+              <input type="text" name="subject" required>
+            </label>
+            <label class="field">
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">
+              Send Message
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+            </button>
+            <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =============================== FOOTER =============================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/logo.svg" alt="" width="40" height="40">
+        <div>
+          <p class="footer-name" id="footer-name"></p>
+          <p class="footer-sub" id="footer-sub"></p>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#scope">Project Scope</a>
+        <a href="#milestones">Milestones</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#team">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy" id="footer-copy"></p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close preview">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <figure>
+      <img id="lightbox-img" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
