@@ -458,7 +458,8 @@ window.SITE = {
   /* ---------- Contact ---------- */
   contact: {
     email: "", // group email, e.g. "team.projectname@gmail.com" (also receives the contact form)
-    phone: "",
+    phone: "+94 76 700 5231",
+    whatsapp: "+94 76 700 5231", // number for the "Chat on WhatsApp" link (leave "" to hide)
     address: "SLIIT Malabe Campus, New Kandy Road, Malabe, Sri Lanka",
     note: "Have a question about our research? Send us a message and we'll get back to you."
   }

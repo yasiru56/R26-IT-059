@@ -60,6 +60,7 @@
     cross: '<path d="M18 6 6 18M6 6l12 12"/>',
     image: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
     mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/>',
+    whatsapp: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.5 9.5c.3 1.6 1.4 3.3 3.2 4.3l1-1 2 1v1.2c-3.2.3-7-3.3-6.7-6.5H10l1 2Z"/>',
     phone: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>',
     pin: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
     building: '<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/>',
@@ -483,6 +484,11 @@
     const rows = [
       c.email && { icon: "mail", label: "Email", value: `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` },
       c.phone && { icon: "phone", label: "Phone", value: `<a href="tel:${esc(c.phone.replace(/\s+/g, ""))}">${esc(c.phone)}</a>` },
+      c.whatsapp && {
+        icon: "whatsapp",
+        label: "WhatsApp",
+        value: `<a href="https://wa.me/${esc(c.whatsapp.replace(/\D/g, ""))}" target="_blank" rel="noopener">Chat on WhatsApp</a>`
+      },
       p.university && { icon: "building", label: "University", value: esc(p.university) },
       c.address && { icon: "pin", label: "Address", value: esc(c.address) }
     ].filter(Boolean);
