@@ -4,5 +4,6 @@ desktop.ini
 .DS_Store
 .vscode/
 
-# Vercel CLI link folder
-.vercel/
+# Vercel CLI link folder and local env files
+.vercel
+.env*.local

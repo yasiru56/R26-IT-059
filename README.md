@@ -4,7 +4,9 @@ Showcase website for our SLIIT research project (group **R26-IT-059**, BurnoutGu
 research gap, objectives, methodology, milestones, documents, team and contact details.
 
 It's a plain static site (HTML, CSS and JavaScript). There's nothing to install or build, and it
-runs on GitHub Pages for free.
+is hosted for free on Vercel.
+
+**Live site:** https://r26-it-059.vercel.app
 
 ## Folder structure
 
@@ -54,7 +56,7 @@ save, and refresh the browser.
 Items with an empty `file` show **Coming soon** instead of the View and Download buttons.
 
 > GitHub rejects files over **100 MB**, so compress large PDFs before adding them.
-> Everything in this repository is **public** once it's on GitHub Pages.
+> Everything in this repository is **public**: the repository and the live site can be seen by anyone.
 
 ## Adding photos and screenshots
 
@@ -74,14 +76,21 @@ python -m http.server 8080
 
 Then open http://localhost:8080.
 
-## Publishing on GitHub Pages
+## Publishing (Vercel)
 
-1. Push this folder to a **public** GitHub repository.
-2. On GitHub, go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`.
-4. After a minute or two the site is live at `https://<username>.github.io/<repository-name>/`.
+The site is deployed on Vercel as the project `r26-it-059`, connected to this GitHub repository.
 
-Every push to `main` updates the live site automatically.
+- **Every push to `main` updates https://r26-it-059.vercel.app automatically**, usually within a minute.
+- Pushes to other branches get their own preview link, so you can check changes before merging.
+- No build step is needed: Vercel serves the files as they are.
+
+To update the site: edit the files, then
+
+```
+git add .
+git commit -m "Describe your change"
+git push
+```
 
 ## Changing the colours
 
