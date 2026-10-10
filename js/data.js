@@ -410,7 +410,7 @@ window.SITE = {
       itNumber: "IT22215710",
       role: "Member",
       component: "Behavioural Pattern (VAE)",
-      photo: "",
+      photo: "assets/images/team/karunarathne.jpg",
       email: "",
       linkedin: "",
       github: ""
@@ -420,7 +420,7 @@ window.SITE = {
       itNumber: "IT22253194",
       role: "Member",
       component: "Meta-Integration (FNN + Dashboard)",
-      photo: "",
+      photo: "assets/images/team/jayawickrama.jpg",
       email: "",
       linkedin: "",
       github: ""
@@ -457,7 +457,7 @@ window.SITE = {
 
   /* ---------- Contact ---------- */
   contact: {
-    email: "", // group email, e.g. "team.projectname@gmail.com" (also receives the contact form)
+    email: "yasiruinduwara56@gmail.com", // group email, e.g. "team.projectname@gmail.com" (also receives the contact form)
     phone: "+94 76 700 5231",
     whatsapp: "+94 76 700 5231", // number for the "Chat on WhatsApp" link (leave "" to hide)
     address: "SLIIT Malabe Campus, New Kandy Road, Malabe, Sri Lanka",
