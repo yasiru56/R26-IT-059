@@ -232,7 +232,7 @@
           <article class="card">
             <p>The system is built from four components: three specialist models that each produce an explained risk signal, and a Meta-Integration layer that fuses them. Because the models use different data, labels and training methods, keeping them separate lets each one be trained, validated and explained on its own, and keeps the whole system modular and interpretable.</p>
             <p>The academic trend model is trained on 16,950 students from the Open University Learning Analytics Dataset (OULAD), each described by 17 weeks of 13 engagement and assessment features. The emotional classifier is trained on 51,068 labelled passages from the public Sentiment Analysis for Mental Health dataset, where ten models were compared under one protocol. The behavioural detector learns normal engagement from OULAD LMS logs (32,593 students, 10.6 million interactions) and is checked on a SLIIT synthetic dataset of 500 students. Results are measured with F1, accuracy, ROC-AUC, significance tests, cross-year validation and lead-time analysis.</p>
-            <p>The Meta-Integration FNN takes 11 inputs (the emotional distress score, five behavioural signals and five academic-risk signals) and outputs one risk score between 0 and 1, mapped to HIGH (above 0.70), MEDIUM (0.40–0.70) or LOW (below 0.40). A transparent weighted sum (0.4 academic, 0.3 behavioural, 0.3 emotional) is also provided for stakeholders who need an auditable formula. In the preliminary fusion run reported in our ICAC 2026 paper, where the behavioural inputs were still simulated, the fused model reached a ROC-AUC of 0.8576.</p>
+            <p>The Meta-Integration FNN takes 11 inputs (the emotional distress score, five behavioural signals and five academic-risk signals) and outputs one risk score between 0 and 1, mapped to HIGH (above 0.70), MEDIUM (0.40–0.70) or LOW (below 0.40). A transparent weighted sum (0.4 academic, 0.3 behavioural, 0.3 emotional) is also provided for stakeholders who need an auditable formula. In the preliminary fusion run reported in our ICAC 2026 paper, where the behavioural inputs were simulated and the emotional scores were not yet matched to the same students, the fused model reached a ROC-AUC of 0.8576 as a feasibility check.</p>
           </article>
           <ol class="steps">
             <li><h4>Literature Review</h4><p>Reviewed research on student burnout and dropout, mental-health NLP, LMS learning analytics and explainable AI to identify the research gaps.</p></li>
@@ -461,7 +461,7 @@
         </header>
         <div class="grid-2">
           <div id="documents">
-            <h3 class="dl-heading">Documents <small>2/8 available</small></h3>
+            <h3 class="dl-heading">Documents <small>4/8 available</small></h3>
             <div class="file">
               <span class="badge">PDF</span>
               <div><h4>Topic Assessment Form</h4><p>Group document · 2.0 MB</p></div>
@@ -479,29 +479,31 @@
               <a class="btn-sm" href="assets/docs/Research_Paper_ICAC2026_R26-IT-059.pdf" target="_blank">View</a>
               <a class="btn-sm primary" href="assets/docs/Research_Paper_ICAC2026_R26-IT-059.pdf" download>Download</a>
             </div>
+            <div class="file">
+              <span class="badge">PDF</span>
+              <div><h4>Group Report (Draft)</h4><p>Common Integrated Solution Report · 1.0 MB</p></div>
+              <a class="btn-sm" href="assets/docs/Group_Report_Draft_R26-IT-059.pdf" target="_blank">View</a>
+              <a class="btn-sm primary" href="assets/docs/Group_Report_Draft_R26-IT-059.pdf" download>Download</a>
+            </div>
             <div class="file pending">
               <span class="badge"></span>
-              <div><h4>Final Group Report</h4><p>Group document</p></div>
+              <div><h4>Individual Thesis</h4><p>Mahavithana S.M. · IT22916426</p></div>
+              <span class="soon">Coming soon</span>
+            </div>
+            <div class="file">
+              <span class="badge">PDF</span>
+              <div><h4>Individual Thesis (Draft)</h4><p>Induwara K.P.Y. · IT22196392 · 2.0 MB</p></div>
+              <a class="btn-sm" href="assets/docs/Thesis_Draft_IT22196392.pdf" target="_blank">View</a>
+              <a class="btn-sm primary" href="assets/docs/Thesis_Draft_IT22196392.pdf" download>Download</a>
+            </div>
+            <div class="file pending">
+              <span class="badge"></span>
+              <div><h4>Individual Thesis</h4><p>Karunarathne D.C. · IT22215710</p></div>
               <span class="soon">Coming soon</span>
             </div>
             <div class="file pending">
               <span class="badge"></span>
-              <div><h4>Individual Final Report</h4><p>Mahavithana S.M. · IT22916426</p></div>
-              <span class="soon">Coming soon</span>
-            </div>
-            <div class="file pending">
-              <span class="badge"></span>
-              <div><h4>Individual Final Report</h4><p>Induwara K.P.Y. · IT22196392</p></div>
-              <span class="soon">Coming soon</span>
-            </div>
-            <div class="file pending">
-              <span class="badge"></span>
-              <div><h4>Individual Final Report</h4><p>Karunarathne D.C. · IT22215710</p></div>
-              <span class="soon">Coming soon</span>
-            </div>
-            <div class="file pending">
-              <span class="badge"></span>
-              <div><h4>Individual Final Report</h4><p>Jayawickrama G.T. · IT22253194</p></div>
+              <div><h4>Individual Thesis</h4><p>Jayawickrama G.T. · IT22253194</p></div>
               <span class="soon">Coming soon</span>
             </div>
           </div>
@@ -613,9 +615,9 @@
           <p>Have a question about our research? Contact us and we'll get back to you.</p>
         </header>
         <div class="grid-4">
-          <a class="card contact" href="mailto:yasiruinduwara56@gmail.com">
+          <a class="card contact" href="mailto:R26.IT.059@gmail.com">
             <img src="assets/images/icons/mail.svg" alt="" width="24" height="24">
-            <span class="label">Email</span>yasiruinduwara56@gmail.com
+            <span class="label">Email</span>R26.IT.059@gmail.com
           </a>
           <a class="card contact" href="tel:+94767005231">
             <img src="assets/images/icons/phone.svg" alt="" width="24" height="24">
